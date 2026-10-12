@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ Thống Đặt Phòng Khách Sạn Real-time</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Socket.io Client -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-container">
+      <div class="logo-area">
+        <span class="logo-icon">🏨</span>
+        <h1>VibeHotel</h1>
+      </div>
+      <p class="system-status">Hệ thống cập nhật thời gian thực <span class="status-indicator online"></span></p>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- Bộ lọc & Tìm kiếm -->
+    <section class="filter-section card">
+      <div class="filter-group">
+        <label for="search-input">Tìm kiếm phòng:</label>
+        <input type="text" id="search-input" placeholder="Nhập tên phòng hoặc loại phòng...">
+      </div>
+      <div class="filter-group">
+        <label for="status-filter">Trạng thái:</label>
+        <select id="status-filter">
+          <option value="all">Tất cả phòng</option>
+          <option value="available">Phòng trống</option>
+          <option value="booked">Phòng đã đặt</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Danh sách phòng hiển thị -->
+    <section class="rooms-section">
+      <h2>Danh Sách Phòng Trực Tuyến</h2>
+      <div id="rooms-grid" class="rooms-grid">
+        <!-- Render động từ app.js -->
+      </div>
+    </section>
+
+    <!-- Modal Đặt Phòng -->
+    <div id="booking-modal" class="modal">
+      <div class="modal-content card">
+        <span class="close-button" id="close-modal-btn">&times;</span>
+        <h3 id="modal-title">Đặt Phòng</h3>
+        <form id="booking-form">
+          <input type="hidden" id="modal-room-id">
+          
+          <div class="form-group">
+            <label for="customer-name">Họ và tên khách hàng:</label>
+            <input type="text" id="customer-name" required placeholder="Nguyễn Văn A">
+          </div>
+
+          <div class="form-group">
+            <label for="customer-email">Địa chỉ Email:</label>
+            <input type="email" id="customer-email" required placeholder="nguyenvana@gmail.com">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="check-in-date">Ngày nhận phòng:</label>
+              <input type="date" id="check-in-date" required>
+            </div>
+            <div class="form-group">
+              <label for="check-out-date">Ngày trả phòng:</label>
+              <input type="date" id="check-out-date" required>
+            </div>
+          </div>
+
+          <div class="booking-summary" id="booking-summary">
+            <p>Đơn giá: <strong id="summary-price">0đ</strong> / đêm</p>
+            <p style="margin-top: 5px; font-size: 0.95rem; color: var(--primary-color);">
+              Tổng chi phí dự kiến: <strong id="summary-total-price">0đ</strong>
+            </p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submit-booking-btn">Xác Nhận Đặt Phòng</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>© 2024 VibeHotel Management System. Powered by Vibecode Senior Full-Stack Developer.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+```
+
+---
