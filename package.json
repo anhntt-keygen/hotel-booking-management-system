@@ -1,0 +1,30 @@
+{
+  "name": "hotel-booking-management-system",
+  "version": "1.0.0",
+  "description": "Hotel Booking Management System with Real-time Updates and Playwright E2E Tests",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "playwright test"
+  },
+  "keywords": [
+    "hotel",
+    "booking",
+    "real-time",
+    "playwright",
+    "express",
+    "socket.io"
+  ],
+  "author": "Vibecode Senior Full-Stack Developer",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.43.1"
+  }
+}
+```
+
+---
